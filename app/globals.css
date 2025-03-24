@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* Custom CSS variables */
+:root {
+  --cyber-dark: #070d1f;
+  --cyber-blue: #00a3ff;
+  --cyber-blue-dark: #0077b6;
+  --cyber-pink: #ff00ff;
+  --cyber-purple: #7000ff;
+  --cyber-yellow: #ebff00;
+}
+
+@layer components {
+  .glassmorphism {
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  
+  .cyber-card {
+    @apply relative p-6 rounded-lg overflow-hidden border-2 border-cyber-blue/30;
+    background: rgba(0, 10, 30, 0.8);
+    box-shadow: 0 0 15px rgba(0, 163, 255, 0.2);
+    backdrop-filter: blur(10px);
+    animation: cyber-glow 3s infinite alternate;
+    transition: all 0.3s ease;
+  }
+  
+  .cyber-card:hover {
+    box-shadow: 0 0 25px rgba(0, 163, 255, 0.4);
+    transform: translateY(-5px);
+  }
+  
+  .font-cyber {
+    @apply font-orbitron;
+    text-shadow: 0 0 10px var(--cyber-blue);
+  }
+
+  .cyber-button {
+    @apply relative px-6 py-3 bg-transparent border-2 border-cyber-blue text-cyber-blue
+    font-orbitron uppercase tracking-wider transition-all duration-300
+    hover:bg-cyber-blue hover:text-cyber-dark hover:shadow-[0_0_20px_rgba(0,246,255,0.5)]
+    before:absolute before:inset-0 before:bg-cyber-blue before:opacity-0
+    before:transition-opacity before:duration-300 hover:before:opacity-100
+    before:-z-10;
+  }
+
+  .neon-text {
+    @apply text-cyber-blue animate-neon-pulse;
+  }
+
+  .glitch-text {
+    @apply font-press-start-2p text-cyber-pink animate-glitch;
+  }
+}
+
+@layer utilities {
+  .animated-title {
+    @apply flex flex-col gap-1 text-7xl uppercase leading-[.8] text-white sm:px-32 md:text-[6rem];
+  }
+
+  .animated-word {
+    @apply font-orbitron font-black opacity-0;
+    transform: translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg);
+    transform-origin: 50% 50% -150px !important;
+    will-change: opacity, transform;
+  }
+  
+  .text-gradient {
+    background: linear-gradient(90deg, var(--cyber-blue), var(--cyber-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .border-gradient {
+    border-image: linear-gradient(45deg, var(--cyber-blue), var(--cyber-pink)) 1;
+  }
+  
+  .bg-gradient-cyber {
+    background: linear-gradient(135deg, var(--cyber-dark), rgba(70, 0, 100, 0.8));
+  }
+}
+
+/* Animations */
+@keyframes cyber-glow {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 163, 255, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(0, 163, 255, 0.6), 0 0 30px rgba(112, 0, 255, 0.4);
+  }
+}
+
+@keyframes text-flicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 1;
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.33;
+  }
+}
+
+@keyframes neon-pulse {
+  0%, 100% { 
+    text-shadow: 0 0 5px var(--cyber-blue), 0 0 10px var(--cyber-blue); 
+  }
+  50% { 
+    text-shadow: 0 0 20px var(--cyber-blue), 0 0 30px var(--cyber-blue); 
+  }
+}
+
+@keyframes soundwave {
+  0% {
+    height: 4px;
+    transform: translateY(0px);
+  }
+  50% {
+    height: 16px;
+    transform: translateY(-4px);
+  }
+  100% {
+    height: 4px;
+    transform: translateY(0px);
+  }
+}
+
+.animate-soundwave {
+  animation: soundwave 0.5s ease infinite;
+}
+
+/* Hover effects */
+.hover-glow {
+  transition: text-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+  text-shadow: 0 0 10px var(--cyber-blue), 0 0 20px var(--cyber-blue);
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--background-start-rgb));
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00f6ff;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00c4cc;
+} 
