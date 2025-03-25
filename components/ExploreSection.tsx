@@ -39,7 +39,7 @@ const ExploreSection = () => {
   const [active, setActive] = useState('event-2');
 
   return (
-    <section className="py-20 px-4 relative overflow-hidden">
+    <section className="py-20 px-4 relative overflow-hidden" id="explore">
       <div className="absolute inset-0 bg-cyber-dark/80 z-0"></div>
       <div 
         className="absolute inset-0 z-0 opacity-30"
@@ -61,7 +61,7 @@ const ExploreSection = () => {
           <div className="relative inline-block">
             <AnimatedTitle
               title="Expl<b>o</b>re <br /> Syner<b>g</b>y Events"
-              containerClass="mt-5"
+              containerClass="mt-5 !text-5xl md:!text-7xl"
             />
             <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-cyber-pink"></div>
           </div>
