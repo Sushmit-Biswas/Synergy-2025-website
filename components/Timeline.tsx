@@ -28,7 +28,7 @@ export default function Timeline({ events }: TimelineProps) {
         {/* Main glowing line */}
         <div className="w-1 h-full bg-gradient-to-b from-cyber-blue/10 via-cyber-blue/60 to-cyber-blue/10 rounded-full overflow-hidden relative">
           {/* Animated pulse effect */}
-          <motion.div 
+    <motion.div
             className="absolute w-full h-[30%] bg-gradient-to-b from-transparent via-cyber-pink/60 to-transparent"
             initial={{ top: "-30%" }}
             animate={{ top: "100%" }}
@@ -62,14 +62,14 @@ export default function Timeline({ events }: TimelineProps) {
       </div>
 
       <div className="space-y-16">
-        {events.map((event, index) => (
-          <motion.div
-            key={index}
+      {events.map((event, index) => (
+        <motion.div
+          key={index}
             initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: index * 0.2 }}
             className={`relative flex items-center ${
-              index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+            index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
             }`}
           >
             {/* Enhanced Timeline Node */}
@@ -151,7 +151,7 @@ export default function Timeline({ events }: TimelineProps) {
                 
                 {/* Event details with icons */}
                 {event.venue && (
-                  <div className="flex items-center mb-2">
+            <div className="flex items-center mb-2">
                     <svg
                       className="w-4 h-4 mr-2 text-cyber-pink"
                       fill="none"
@@ -183,9 +183,9 @@ export default function Timeline({ events }: TimelineProps) {
                   transition={{ duration: 0.3 }}
                 />
               </div>
-            </div>
-          </motion.div>
-        ))}
+          </div>
+        </motion.div>
+      ))}
       </div>
     </div>
   );

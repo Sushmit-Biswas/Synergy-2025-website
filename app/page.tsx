@@ -1,10 +1,8 @@
 'use client';
-
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
 import Navbar from '../components/Navbar';
 import AboutSection from '../components/AboutSection';
 import EventsSection from '../components/EventsSection';
@@ -81,7 +79,7 @@ export default function Home() {
     
     return () => clearInterval(interval);
   }, []);
-
+  
   // Set up GSAP animations
   useEffect(() => {
     // Create a timeline for the hero section animations
@@ -105,7 +103,7 @@ export default function Home() {
       duration: 0.5,
       ease: "power2.out",
     }, "-=0.4");
-
+    
     // Animate grid background
     gsap.to(".grid-background", {
       backgroundPosition: "0% 100%",
@@ -116,7 +114,7 @@ export default function Home() {
         scrub: 1,
       },
     });
-
+    
     // Animate sections as they come into view
     gsap.utils.toArray(".animate-section").forEach((section: any) => {
       gsap.from(section, {
@@ -131,7 +129,7 @@ export default function Home() {
         },
       });
     });
-
+    
     return () => {
       // Clean up ScrollTrigger instances
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -388,7 +386,7 @@ export default function Home() {
                 >
                   2025
                 </motion.span>
-              </h1>
+          </h1>
             </div>
           </div>
           
@@ -442,13 +440,13 @@ export default function Home() {
           
           <div className="hero-button">
             <Button 
-              title="Register Now" 
-              containerClass="mx-auto bg-cyber-pink hover:bg-cyber-pink/80"
+              title="REGISTER NOW" 
+              containerClass="mx-auto hover-effect-button"
             />
           </div>
         </div>
       </section>
-
+      
       {/* Main Content Sections */}
       <div className="animate-section">
         <AboutSection />
@@ -556,8 +554,8 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <AnimatedTitle 
-              title="Syner<b>g</b>y 2025" 
+          <AnimatedTitle 
+            title="Syner<b>g</b>y 2025" 
               containerClass="mb-10 !text-4xl"
             />
             
@@ -658,8 +656,8 @@ export default function Home() {
             {/* Copyright with animated code - Updated text */}
             <div className="border-t border-cyber-blue/20 pt-6">
               <p className="text-gray-400">
-                © {new Date().getFullYear()} Synergy - IIIT Bangalore. All rights reserved.
-              </p>
+            © {new Date().getFullYear()} Synergy - IIIT Bangalore. All rights reserved.
+          </p>
               <motion.div
                 className="mt-3 inline-block bg-cyber-dark/80 px-4 py-2 rounded-lg border border-cyber-blue/20 text-xs font-mono"
                 animate={{ 
@@ -724,4 +722,4 @@ export default function Home() {
       </footer>
     </main>
   );
-} 
+}

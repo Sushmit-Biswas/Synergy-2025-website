@@ -55,7 +55,7 @@ body {
     @apply font-orbitron;
     text-shadow: 0 0 10px var(--cyber-blue);
   }
-
+  
   .cyber-button {
     @apply relative px-6 py-3 bg-transparent border-2 border-cyber-blue text-cyber-blue
     font-orbitron uppercase tracking-wider transition-all duration-300
@@ -64,11 +64,11 @@ body {
     before:transition-opacity before:duration-300 hover:before:opacity-100
     before:-z-10;
   }
-
+  
   .neon-text {
     @apply text-cyber-blue animate-neon-pulse;
   }
-
+  
   .glitch-text {
     @apply font-press-start-2p text-cyber-pink animate-glitch;
   }
@@ -82,7 +82,7 @@ body {
   .animated-title {
     @apply flex flex-col gap-1 text-7xl uppercase leading-[.8] text-white sm:px-32 md:text-[6rem];
   }
-
+  
   .animated-word {
     @apply font-orbitron font-black opacity-0;
     transform: translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg);
@@ -229,4 +229,4 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #00c4cc;
-} 
+}

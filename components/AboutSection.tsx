@@ -74,25 +74,25 @@ export default function AboutSection() {
               <h3 className="text-2xl font-cyber text-cyber-blue mb-4">
                 Why Participate?
               </h3>
-              <ul className="text-gray-300 space-y-2">
+              <ul className="text-gray-300 space-y-3">
                 <li className="flex items-center">
-                  <span className="text-cyber-pink mr-2">•</span>
+                  <span className="text-[#0066cc] text-xl mr-3">•</span>
                   Network with industry professionals
                 </li>
                 <li className="flex items-center">
-                  <span className="text-cyber-pink mr-2">•</span>
+                  <span className="text-[#0066cc] text-xl mr-3">•</span>
                   Showcase your skills and projects
                 </li>
                 <li className="flex items-center">
-                  <span className="text-cyber-pink mr-2">•</span>
+                  <span className="text-[#0066cc] text-xl mr-3">•</span>
                   Learn from expert workshops
                 </li>
                 <li className="flex items-center">
-                  <span className="text-cyber-pink mr-2">•</span>
+                  <span className="text-[#0066cc] text-xl mr-3">•</span>
                   Win exciting prizes and recognition
                 </li>
                 <li className="flex items-center">
-                  <span className="text-cyber-pink mr-2">•</span>
+                  <span className="text-[#0066cc] text-xl mr-3">•</span>
                   Be part of the tech community
                 </li>
               </ul>
