@@ -107,7 +107,6 @@ export const timelineEvents = [
 ];
 
 export const categories = [
-  "All",
   "Competition",
   "Conference",
   "Workshop",
