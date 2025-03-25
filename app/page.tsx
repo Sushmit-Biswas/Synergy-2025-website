@@ -11,6 +11,7 @@ import ContactSection from '../components/ContactSection';
 import ExploreSection from '../components/ExploreSection';
 import AnimatedTitle from '../components/AnimatedTitle';
 import Button from '../components/Button';
+import RotatingText from '../components/RotatingText';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -417,26 +418,25 @@ export default function Home() {
             />
           </motion.div>
           
-          <p className="hero-subtitle text-lg sm:text-xl md:text-2xl mb-8 md:mb-10 max-w-2xl mx-auto text-gray-300 drop-shadow-glow relative">
-            <motion.span
-              className="block"
-              animate={{
-                opacity: [0.9, 1, 0.9],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                repeatType: "reverse",
-              }}
-            >
-              The biggest technical festival of IIIT Bangalore. 
-              <span className="text-cyber-blue"> Join us </span> 
-              for an immersive journey into 
-              <span className="text-cyber-pink"> technology</span>, 
-              <span className="text-cyber-purple"> innovation</span>, and 
-              <span className="text-cyber-blue"> creativity</span>.
-            </motion.span>
-          </p>
+          <div className="hero-subtitle text-center">
+            <p className="text-[24px] font-['IBM_Plex_Mono',monospace] font-semibold text-white mb-4">
+              The Biggest Technical Festival of IIIT Bangalore
+            </p>
+            
+            <div className="hidden md:flex justify-center items-center w-full mx-auto">
+              <div className="w-full max-w-xl mx-auto">
+                <RotatingText 
+                  prefix="Join us for an immersive journey into"
+                  words={[
+                    { text: "\u00A0technology", className: "tech-color" },
+                    { text: "\u00A0innovation", className: "innovation-color" },
+                    { text: "\u00A0creativity", className: "creativity-color" }
+                  ]}
+                  delay={4000}
+                />
+              </div>
+            </div>
+          </div>
           
           <div className="hero-button">
             <Button 

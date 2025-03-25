@@ -16,7 +16,7 @@ export default function AboutSection() {
             About Synergy
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            The biggest technical festival of IIIT Bangalore
+            The Biggest Technical Festival of IIIT Bangalore
           </p>
         </motion.div>
 
